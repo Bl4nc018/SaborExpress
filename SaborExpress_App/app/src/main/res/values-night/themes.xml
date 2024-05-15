@@ -1,16 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme for Night mode -->
     <style name="Theme.SaborExpress" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/orange_500</item> <!-- Naranja principal -->
+        <item name="colorPrimaryVariant">@color/orange_700</item> <!-- Naranja oscuro -->
+        <item name="colorOnPrimary">@color/white</item> <!-- Blanco para texto sobre naranja -->
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/gray_200</item> <!-- Gris claro para contraste secundario -->
+        <item name="colorSecondaryVariant">@color/gray_700</item> <!-- Gris oscuro para variantes secundarias -->
+        <item name="colorOnSecondary">@color/black</item> <!-- Negro para texto sobre gris -->
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/orange_700</item> <!-- Usando el naranja oscuro para la barra de estado -->
     </style>
 </resources>
