@@ -1,0 +1,42 @@
+[
+  {
+      "recipe_name": "BLT wraps",
+      "description": "Disfruta de estos wraps BLT, una mezcla perfecta de tocino crujiente, lechuga fresca y tomates jugosos, todo envuelto en una tortilla suave con una deliciosa mayonesa de cebollín.",
+      "food_type": "Americana",
+      "ingredients": "Tocino, lechuga, tomates, tortillas, mayonesa, cebollín, jugo de limón, ajo en polvo y sal.",
+      "steps": "Hornea el tocino, mezcla la mayonesa de cebollín, úntala en tortillas con lechuga, tomate y tocino, y enrolla los wraps.",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/SaborExpress/main/BLT.jpg"
+    },
+  {
+      "recipe_name": "Wedge salad sandwich",
+      "description": "Disfruta de este sándwich de ensalada wedge, una combinación fresca y crujiente perfecta para cualquier comida.",
+      "food_type": "Americana",
+      "ingredients": "Pan, lechuga iceberg, tomate, tocino, cebolla roja, mayonesa, crema agria, queso azul, cebollino, ajo en polvo, sal y pimienta.",
+      "steps": "Tuesta el pan, mezcla la mayonesa y crema agria con queso azul y condimentos, arma el sándwich con lechuga, tomate, cebolla, tocino y aderezo, y sirve.",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/SaborExpress/main/Wedge.jpg"
+    },
+  {
+      "recipe_name": "Buffalo chicken tacos",
+      "description": "Saborea estos tacos de pollo buffalo, una combinación picante y deliciosa ideal para cualquier ocasión.",
+      "food_type": "Tex-mex",
+      "ingredients": "Pechugas de pollo, salsa Buffalo, tortillas, repollo, zanahoria, apio, cebolla roja, queso azul, mayonesa, yogur griego, vinagre, ajo en polvo, sal y pimienta.",
+      "steps": "Cocina el pollo con salsa buffalo, prepara una ensalada de repollo y zanahoria, mezcla el aderezo de queso azul, y arma los tacos con pollo, ensalada y aderezo.",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/SaborExpress/main/Tacos.jpg"
+    },
+  {
+      "recipe_name": "French bread pizza",
+      "description": "Disfruta de esta pizza de pan francés, una opción rápida y deliciosa para una cena fácil y satisfactoria.",
+      "food_type": "Francesa",
+      "ingredients": "Pan francés, salsa de tomate, mozzarella, parmesano, pepperoni, pimientos, cebolla, champiñones, aceitunas, aceite de oliva, ajo en polvo, orégano, sal y pimienta.",
+      "steps": "Corta el pan francés, úntalo con salsa de tomate, añade queso y toppings, hornea hasta que el queso se derrita y esté burbujeante.",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/SaborExpress/main/Pizza.jpg"
+    },
+  {
+      "recipe_name": "Creamy skillet gnocchi",
+      "description": "Disfruta de este cremoso gnocchi a la sartén con tocino y guisantes, una comida rápida y reconfortante perfecta para cualquier noche de la semana.",
+      "food_type": "Italiana",
+      "ingredients": "Gnocchi, tocino, guisantes, crema espesa, caldo de pollo, ajo, parmesano rallado, sal y pimienta.",
+      "steps": "Cocina el tocino y los gnocchi, añade ajo, caldo y crema, mezcla con guisantes, tocino y parmesano, y cocina hasta espesar.",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/SaborExpress/main/Gnocchi.jpg"
+    },
+]
