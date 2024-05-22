@@ -36,9 +36,9 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         // Establecer el texto de los TextViews y la imagen del ImageView
         recipe_name.setText(items.getRecipe_Name());
         description.setText(items.getDescription());
-        food_type.setText(items.getFood_type());
-        ingredients.setText(items.getIngredients());
-        steps.setText(items.getSteps());
+//        food_type.setText(items.getFood_type());
+//        ingredients.setText(items.getIngredients());
+//        steps.setText(items.getSteps());
 //        Util.downloadBitmapToImageView(items.getImage_url(), this.imageView);
     }
 }
