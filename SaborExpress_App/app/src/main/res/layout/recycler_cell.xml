@@ -12,51 +12,46 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:background="#F6E1FF"
+        android:background="@color/orange_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/image_view"
-            android:layout_width="150dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/description"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.238" />
+            app:layout_constraintBottom_toBottomOf="parent" />
+
 
         <TextView
             android:id="@+id/recipe_name"
-            android:layout_width="155dp"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:text="Receta"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_view"
-            app:layout_constraintTop_toTopOf="@+id/image_view" />
+            app:layout_constraintStart_toEndOf="@+id/image_view"/>
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="155dp"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="88dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginTop="20dp"
             android:text="Descripción"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.521"
-            app:layout_constraintStart_toEndOf="@+id/image_view"
-            app:layout_constraintTop_toTopOf="@+id/image_view" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/recipe_name"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
