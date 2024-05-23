@@ -28,7 +28,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 //        food_type = ivi.findViewById(R.id.food_type);
 //        ingredients = ivi.findViewById(R.id.ingredients);
 //        steps = ivi.findViewById(R.id.steps);
-//        image_url = ivi.findViewById(R.id.image_url);
+        image_url = ivi.findViewById(R.id.image_url);
     }
 
     // Método para mostrar los datos en los elementos de la vista
@@ -39,6 +39,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 //        food_type.setText(items.getFood_type());
 //        ingredients.setText(items.getIngredients());
 //        steps.setText(items.getSteps());
-//        Util.downloadBitmapToImageView(items.getImage_url(), this.imageView);
+        Util.downloadBitmapToImageView(items.getImage_url(), this.image_url);
     }
 }
