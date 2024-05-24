@@ -18,9 +18,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     // Variables para los elementos de la vista
     private TextView recipe_name;
     private TextView description;
-    private TextView food_type;
-    private TextView ingredients;
-    private TextView steps;
     private ImageView image_url;
     private Button cookButton;
 
@@ -30,9 +27,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         // Encontrar los elementos de la vista
         recipe_name = ivi.findViewById(R.id.recipe_name);
         description = ivi.findViewById(R.id.description);
-//        food_type = ivi.findViewById(R.id.food_type);
-//        ingredients = ivi.findViewById(R.id.ingredients);
-//        steps = ivi.findViewById(R.id.steps);
         image_url = ivi.findViewById(R.id.image_url);
         cookButton = ivi.findViewById(R.id.cookButton);
     }
@@ -42,9 +36,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         // Establecer el texto de los TextViews y la imagen del ImageView
         recipe_name.setText(items.getRecipe_Name());
         description.setText(items.getDescription());
-//        food_type.setText(items.getFood_type());
-//        ingredients.setText(items.getIngredients());
-//        steps.setText(items.getSteps());
         Util.downloadBitmapToImageView(items.getImage_url(), this.image_url);
 
         // Aquí puedes cargar la imagen si tienes un ImageLoader
