@@ -61,10 +61,10 @@
                     android:text="Descripción"
                     android:textColor="@color/black"
                     android:textSize="19dp" />
-
             </ScrollView>
 
             <Button
+                android:id="@+id/cookButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"

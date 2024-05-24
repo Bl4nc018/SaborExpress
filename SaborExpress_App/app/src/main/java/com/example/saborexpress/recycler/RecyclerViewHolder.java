@@ -1,6 +1,9 @@
 package com.example.saborexpress.recycler;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -8,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.saborexpress.R;
+import com.example.saborexpress.RecipeActivity;
 
 // Clase que representa un ViewHolder para el RecyclerView
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
@@ -18,6 +22,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     private TextView ingredients;
     private TextView steps;
     private ImageView image_url;
+    private Button cookButton;
 
     // Constructor del ViewHolder
     public RecyclerViewHolder(@NonNull View ivi){
@@ -29,6 +34,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 //        ingredients = ivi.findViewById(R.id.ingredients);
 //        steps = ivi.findViewById(R.id.steps);
         image_url = ivi.findViewById(R.id.image_url);
+        cookButton = ivi.findViewById(R.id.cookButton);
     }
 
     // Método para mostrar los datos en los elementos de la vista
@@ -40,5 +46,14 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 //        ingredients.setText(items.getIngredients());
 //        steps.setText(items.getSteps());
         Util.downloadBitmapToImageView(items.getImage_url(), this.image_url);
+
+        // Aquí puedes cargar la imagen si tienes un ImageLoader
+
+        cookButton.setOnClickListener(v -> {
+            Context context = itemView.getContext();
+            Intent intent = new Intent(context, RecipeActivity.class);
+            intent.putExtra("recipe", items);  // Pasar el objeto RecyclerItems directamente
+            context.startActivity(intent);
+        });
     }
 }

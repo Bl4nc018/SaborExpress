@@ -14,6 +14,7 @@ import java.util.List;
 
 // Adaptador para el RecyclerView que muestra los elementos recomendados
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder>{
+
     // Lista de elementos recomendados y fragmento que contiene el RecyclerView
     private List<RecyclerItems> dataset;
     private Fragment fragment;
