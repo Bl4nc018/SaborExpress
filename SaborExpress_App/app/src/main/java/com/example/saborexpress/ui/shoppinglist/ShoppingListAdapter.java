@@ -11,14 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.saborexpress.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapter.ViewHolder> {
 
     private List<ShoppingItem> shoppingItems;
 
-    public ShoppingListAdapter(List<com.example.saborexpress.ui.shoppinglist.ShoppingItem> shoppingItems) {
+    public ShoppingListAdapter(List<ShoppingItem> shoppingItems) {
         this.shoppingItems = shoppingItems;
     }
 
@@ -27,10 +26,10 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         notifyItemInserted(shoppingItems.size() - 1);
     }
 
-    public void toggleItemChecked(int position) {
-        ShoppingItem item = shoppingItems.get(position);
-        item.setChecked(!item.isChecked());
-        notifyItemChanged(position);
+    public void removeItem(int position) {
+        shoppingItems.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, shoppingItems.size());
     }
 
     @NonNull
@@ -48,7 +47,9 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         holder.checkBoxItem.setChecked(item.isChecked());
 
         holder.checkBoxItem.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            item.setChecked(isChecked);
+            if (isChecked) {
+                removeItem(holder.getAdapterPosition());
+            }
         });
     }
 
@@ -57,7 +58,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         return shoppingItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewItemName;
         public CheckBox checkBoxItem;
 
@@ -65,8 +66,6 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
             super(itemView);
             textViewItemName = itemView.findViewById(R.id.textViewItemName);
             checkBoxItem = itemView.findViewById(R.id.checkBoxItem);
-
-            itemView.setOnClickListener(v -> toggleItemChecked(getAdapterPosition()));
         }
     }
 }
