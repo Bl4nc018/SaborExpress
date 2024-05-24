@@ -1,5 +1,6 @@
 package com.example.saborexpress.ui.shoppinglist;
 
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,11 +46,17 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         ShoppingItem item = shoppingItems.get(position);
         holder.textViewItemName.setText(item.getName());
         holder.checkBoxItem.setChecked(item.isChecked());
+        holder.setItemStrikeThrough(item.isChecked());
 
         holder.checkBoxItem.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 removeItem(holder.getAdapterPosition());
             }
+        });
+
+        holder.textViewItemName.setOnClickListener(v -> {
+            item.setChecked(!item.isChecked());
+            holder.setItemStrikeThrough(item.isChecked());
         });
     }
 
@@ -58,7 +65,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         return shoppingItems.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewItemName;
         public CheckBox checkBoxItem;
 
@@ -66,6 +73,14 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
             super(itemView);
             textViewItemName = itemView.findViewById(R.id.textViewItemName);
             checkBoxItem = itemView.findViewById(R.id.checkBoxItem);
+        }
+
+        public void setItemStrikeThrough(boolean isChecked) {
+            if (isChecked) {
+                textViewItemName.setPaintFlags(textViewItemName.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                textViewItemName.setPaintFlags(textViewItemName.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            }
         }
     }
 }
