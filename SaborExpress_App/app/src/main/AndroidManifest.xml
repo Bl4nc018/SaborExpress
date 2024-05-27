@@ -19,6 +19,9 @@
         <activity android:name=".RecipeActivity">
         </activity>
 
+        <activity android:name=".LoginActivity">
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
