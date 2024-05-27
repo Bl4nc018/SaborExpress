@@ -1,10 +1,10 @@
+import json
+import bcrypt
+import secrets
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import PermissionDenied
 from .models import User, UserSession
-import json
-import bcrypt
-import secrets
 
 
 def authenticate_user(request):
@@ -29,7 +29,6 @@ def user(request):
             return JsonResponse(json_response, safe=False, status=200)
         except PermissionDenied:
             return JsonResponse({'error': 'Unauthorized'}, status=401)
-    return JsonResponse({'error': 'Method not allowed'}, status=405)
 
 
 @csrf_exempt
@@ -46,9 +45,8 @@ def sessions(request):
         except User.DoesNotExist:
             return JsonResponse({"response": "User not in database"}, status=404)
         if bcrypt.checkpw(json_password.encode('utf8'), db_user.password.encode('utf8')):
-            random_token = secrets.token_hex(20)
-            session, created = UserSession.objects.get_or_create(user=db_user)
-            session.token = random_token
+            random_token = secrets.token_hex(10)
+            session = UserSession(user=db_user, token=random_token)
             session.save()
             return JsonResponse({"response": "ok", "SessionToken": random_token}, status=201)
         else:
@@ -59,5 +57,6 @@ def sessions(request):
         except PermissionDenied:
             return JsonResponse({'response': 'Unauthorized'}, status=401)
         user_session.delete()
-        return JsonResponse({"response": "Sesión cerrada"}, status=200)
-    return JsonResponse({"response": "HTTP method unsupported"}, status=405)
+        return JsonResponse({"response": "Sesión cerrada"}, status=201, safe=False)
+    else:
+        return JsonResponse({"response": "HTTP method unsupported"}, status=405)
