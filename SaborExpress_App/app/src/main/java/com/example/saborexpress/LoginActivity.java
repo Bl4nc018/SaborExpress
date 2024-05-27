@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userName = findViewById(R.id.userNameCard);
-        userPassword = findViewById(R.id.userPasswordCard);
+        userName = findViewById(R.id.userName);
+        userPassword = findViewById(R.id.userPassword);
         loginButton = findViewById(R.id.loginButton);
 
         requestQueue = Volley.newRequestQueue(this);
