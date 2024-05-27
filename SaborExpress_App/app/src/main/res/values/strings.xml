@@ -2,5 +2,13 @@
     <string name="app_name">SaborExpress</string>
     <string name="title_home">Home</string>
     <string name="title_shopping">Shopping</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_search">Search</string>
+    <string-array name="food_types">
+        <item>Todos</item>
+        <item>Americana</item>
+        <item>Tex-mex</item>
+        <item>Francesa</item>
+        <item>Italiana</item>
+        <!-- Add more types as needed -->
+    </string-array>
 </resources>
