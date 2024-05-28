@@ -4,7 +4,7 @@ import secrets
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import PermissionDenied
-from .models import User, UserSession
+from .models import User, UserSession, Recipe
 
 
 def authenticate_user(request):
@@ -84,3 +84,23 @@ def sessions(request):
         return JsonResponse({"response": "Sesión cerrada"}, status=201, safe=False)
     else:
         return JsonResponse({"response": "HTTP method unsupported"}, status=405)
+
+
+@csrf_exempt
+def search_recipes(request):
+    if request.method == 'GET':
+        recipe_name = request.GET.get('name', '')
+        food_type = request.GET.get('food_type', '')
+
+        if not recipe_name:
+            return JsonResponse({"error": "No recipe name provided"}, status=400)
+
+        recipes = Recipe.objects.filter(recipe_name__icontains=recipe_name)
+
+        if food_type and food_type != "Todos":
+            recipes = recipes.filter(food_type__icontains=food_type)
+
+        recipes_list = list(recipes.values())
+        return JsonResponse(recipes_list, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid HTTP method"}, status=405)
