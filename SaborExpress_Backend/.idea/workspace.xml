@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/java/com/example/saborexpress/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/java/com/example/saborexpress/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/endpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/endpoints.py" afterDir="false" />
+    </list>
+=======
     <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="" />
+>>>>>>> 968d3445af5f850aaefdc4d240a2a4ab2f672ee7
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +44,11 @@
   "keyToString": {
     "Python.SaborExpress runserver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
+    "git-widget-placeholder": "Register__Screen",
+=======
     "git-widget-placeholder": "Search__Screen",
+>>>>>>> 968d3445af5f850aaefdc4d240a2a4ab2f672ee7
     "last_opened_file_path": "C:/Users/usuario/Desktop/TFG/SaborExpress/SaborExpress_Backend/SaborExpressAPI/manage.py",
     "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "preferences.keymap"
@@ -95,6 +110,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.SaborExpress runserver" />
+      <item itemvalue="Python.main" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
