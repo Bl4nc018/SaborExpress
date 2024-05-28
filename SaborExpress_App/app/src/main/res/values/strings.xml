@@ -9,6 +9,13 @@
         <item>Tex-mex</item>
         <item>Francesa</item>
         <item>Italiana</item>
-        <!-- Add more types as needed -->
+        <item>Japonesa</item>
+        <item>Española</item>
+        <item>Mexicana</item>
+        <item>India</item>
+        <item>Ensalada</item>
+        <item>Desayuno</item>
+        <item>Rusa</item>
+        <item>Tailandesa</item>
     </string-array>
 </resources>

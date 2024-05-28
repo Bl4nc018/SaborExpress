@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/activity_recipe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/activity_recipe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/recycler_cell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/recycler_cell.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/endpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/endpoints.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
