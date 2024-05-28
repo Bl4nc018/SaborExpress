@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="" />
+    <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +37,7 @@
   &quot;keyToString&quot;: {
     &quot;Python.SaborExpress runserver.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;User&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Login__Screen&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/Desktop/TFG/SaborExpress/SaborExpress_Backend/SaborExpressAPI/manage.py&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
@@ -49,7 +53,7 @@
       <recent name="C:\Users\usuario\Desktop\TFG\SaborExpress\SaborExpress_Backend\SaborExpressAPI\SaborExpressAPI" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.SaborExpress runserver">
     <configuration name="SaborExpress runserver" type="PythonConfigurationType" factoryName="Python">
       <module name="SaborExpress_Backend" />
       <option name="ENV_FILES" value="" />

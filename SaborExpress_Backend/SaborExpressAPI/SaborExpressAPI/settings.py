@@ -38,6 +38,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.0.2.2']
+
+
 ROOT_URLCONF = 'SaborExpressAPI.urls'
 
 TEMPLATES = [
