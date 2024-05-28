@@ -30,6 +30,30 @@ def user(request):
         except PermissionDenied:
             return JsonResponse({'error': 'Unauthorized'}, status=401)
 
+    elif request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            username = data['username']
+            password = data['password']
+            foodtype = data['foodtype']
+            image = data.get('image', '')  # Manejar si la imagen no está presente
+
+            if User.objects.filter(username=username).exists():
+                return JsonResponse({"response": "User already exists"}, status=400)
+
+            hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+            new_user = User(username=username, password=hashed_password.decode('utf-8'), foodtype=foodtype, image=image)
+            new_user.save()
+
+            return JsonResponse({"response": "User registered successfully"}, status=201)
+        except KeyError:
+            return JsonResponse({"response": "Invalid data"}, status=400)
+        except json.JSONDecodeError:
+            return JsonResponse({"response": "Invalid JSON"}, status=400)
+    else:
+        return JsonResponse({"response": "HTTP method unsupported"}, status=405)
+
 
 @csrf_exempt
 def sessions(request):

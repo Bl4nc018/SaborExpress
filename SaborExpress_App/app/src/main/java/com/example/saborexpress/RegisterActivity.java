@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,87 +17,71 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private RequestQueue requestQueue;
     private Context context = this;
     private EditText userName;
     private EditText userPassword;
-    private Button loginButton;
-    private TextView registerText;
+    private EditText userFoodType;
+    private EditText userImage;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         userName = findViewById(R.id.userName);
         userPassword = findViewById(R.id.userPassword);
-        loginButton = findViewById(R.id.loginButton);
-        registerText = findViewById(R.id.registerText);
+        userFoodType = findViewById(R.id.userFoodType);
+        userImage = findViewById(R.id.userImage);
+        registerButton = findViewById(R.id.registerB);
 
         requestQueue = Volley.newRequestQueue(this);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = userName.getText().toString();
                 String password = userPassword.getText().toString();
-                loginUser(user, password);
+                String foodType = userFoodType.getText().toString();
+                String image = userImage.getText().toString();
+                registerUser(user, password, foodType, image);
             }
         });
-
-        registerText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
 
-    private void loginUser(String userName, String userPassword) {
+    private void registerUser(String userName, String userPassword, String userFoodType, String userImage) {
         JSONObject requestBody = new JSONObject();
         try {
             requestBody.put("username", userName);
             requestBody.put("password", userPassword);
+            requestBody.put("foodtype", userFoodType);
+            if (!userImage.isEmpty()) {
+                requestBody.put("image", userImage);
+            }
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                Server.name + "/user/session",
+                Server.name + "/user",
                 requestBody,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        try {
-                            String receivedToken = response.getString("SessionToken");
-                            Toast.makeText(context, "Token: " + receivedToken, Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(context, MainActivity.class);
-                            intent.putExtra("VALID_USER", userName);
-                            intent.putExtra("VALID_TOKEN", receivedToken);
-                            startActivity(intent);
-                            finish();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(context, "Error parsing response", Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(context, "Registro exitoso", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        if (error.networkResponse == null) {
-                            Toast.makeText(context, "No connection established", Toast.LENGTH_LONG).show();
-                        } else {
-                            int serverCode = error.networkResponse.statusCode;
-                            Toast.makeText(context, "Response status " + serverCode, Toast.LENGTH_LONG).show();
-                        }
-                        error.printStackTrace();
+                        Toast.makeText(context, "Error en el registro: " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
         );
