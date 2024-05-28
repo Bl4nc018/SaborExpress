@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="514de4ca-70a3-4559-b968-35b1210ded7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/activity_recipe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/activity_recipe.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/recycler_cell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SaborExpress_App/app/src/main/res/layout/recycler_cell.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/SaborExpressAPI/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/endpoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/endpoints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SaborExpressAPI/saborexpressapp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +38,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.SaborExpress runserver.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Login__Screen&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/Desktop/TFG/SaborExpress/SaborExpress_Backend/SaborExpressAPI/manage.py&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.SaborExpress runserver.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Search__Screen",
+    "last_opened_file_path": "C:/Users/usuario/Desktop/TFG/SaborExpress/SaborExpress_Backend/SaborExpressAPI/manage.py",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\usuario\Desktop\TFG\SaborExpress\SaborExpress_Backend\SaborExpressAPI" />
