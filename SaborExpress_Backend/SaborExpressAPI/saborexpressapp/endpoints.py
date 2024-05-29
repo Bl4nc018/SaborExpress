@@ -100,7 +100,22 @@ def search_recipes(request):
         if food_type and food_type != "Todos":
             recipes = recipes.filter(food_type__icontains=food_type)
 
-        recipes_list = list(recipes.values())
+        recipes_list = []
+        for recipe in recipes:
+            recipe_data = {
+                "id": recipe.id,
+                "recipe_name": recipe.recipe_name,
+                "description": recipe.description,
+                "food_type": recipe.food_type,
+                "ingredients": recipe.ingredients,
+                "steps": recipe.steps,
+                "image_url": recipe.image_url,
+                "author": recipe.author.username  # Solo el nombre del autor
+            }
+            recipes_list.append(recipe_data)
+
         return JsonResponse(recipes_list, safe=False)
     else:
         return JsonResponse({"error": "Invalid HTTP method"}, status=405)
+
+

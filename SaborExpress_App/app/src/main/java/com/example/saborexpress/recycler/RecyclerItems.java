@@ -14,6 +14,7 @@ public class RecyclerItems implements Serializable {
     private String ingredients;
     private String steps;
     private String image_url;
+    private String author;  // Añadido: Nombre del autor
 
     // Métodos getter para cada variable
     public String getRecipe_Name() { return recipe_name; }
@@ -22,16 +23,18 @@ public class RecyclerItems implements Serializable {
     public String getIngredients() { return ingredients; }
     public String getSteps() { return steps; }
     public String getImage_url() { return image_url; }
+    public String getAuthor() { return author; }  // Añadido: Getter para el nombre del autor
 
     // Constructor que toma los datos como parámetros
     public RecyclerItems(String recipe_name, String description, String food_type,
-                         String ingredients, String steps, String image_url){
+                         String ingredients, String steps, String image_url, String author) {
         this.recipe_name = recipe_name;
         this.description = description;
         this.food_type = food_type;
         this.ingredients = ingredients;
         this.steps = steps;
         this.image_url = image_url;
+        this.author = author;  // Añadido: Asignar el nombre del autor
     }
 
     // Constructor que toma un objeto JSON y extrae los datos
@@ -43,6 +46,7 @@ public class RecyclerItems implements Serializable {
             this.ingredients = json.getString("ingredients");
             this.steps = json.getString("steps");
             this.image_url = json.getString("image_url");
+            this.author = json.getString("author");  // Añadido: Extraer el nombre del autor del JSON
         } catch (JSONException e) {
             e.printStackTrace();
         }

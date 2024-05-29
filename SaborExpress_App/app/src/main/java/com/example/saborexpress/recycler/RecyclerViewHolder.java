@@ -20,6 +20,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     private TextView description;
     private ImageView image_url;
     private Button cookButton;
+    private TextView author;  // Añadido: TextView para el nombre del autor
 
     // Constructor del ViewHolder
     public RecyclerViewHolder(@NonNull View ivi){
@@ -29,6 +30,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         description = ivi.findViewById(R.id.description);
         image_url = ivi.findViewById(R.id.image_url);
         cookButton = ivi.findViewById(R.id.cookButton);
+        author = ivi.findViewById(R.id.author);  // Añadido: Encontrar el TextView del autor
     }
 
     // Método para mostrar los datos en los elementos de la vista
@@ -37,6 +39,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         recipe_name.setText(items.getRecipe_Name());
         description.setText(items.getDescription());
         Util.downloadBitmapToImageView(items.getImage_url(), this.image_url);
+        author.setText(items.getAuthor());  // Añadido: Establecer el nombre del autor
 
         // Aquí puedes cargar la imagen si tienes un ImageLoader
 

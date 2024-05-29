@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="370dp"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
@@ -47,14 +47,27 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Autor"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/recipe_name"
+                app:layout_constraintStart_toStartOf="@id/cuadroDescripcion" />
+
             <ScrollView
                 android:id="@+id/cuadroDescripcion"
                 android:layout_width="200dp"
-                android:layout_height="130dp"
+                android:layout_height="110dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toEndOf="@id/image_url"
-                app:layout_constraintTop_toBottomOf="@id/recipe_name">
+                app:layout_constraintTop_toBottomOf="@id/author">
 
                 <TextView
                     android:id="@+id/description"
@@ -79,7 +92,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:backgroundTint="@color/white" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
