@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_shopping">Shopping</string>
     <string name="title_search">Search</string>
+    <string name="title_profile">Profile</string>
     <string-array name="food_types">
         <item>Todos</item>
         <item>Americana</item>
