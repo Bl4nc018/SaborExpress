@@ -1,6 +1,7 @@
 package com.example.saborexpress.ui.profile;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,7 +60,7 @@ public class AddRecipeActivity extends AppCompatActivity {
     }
 
     private void addRecipe() {
-        String url = Server.name + "/add_recipe";
+        String url = Server.name + "/add_recipe";  // Cambiado a /add_recipe
 
         JSONObject requestBody = new JSONObject();
         try {
@@ -73,6 +74,8 @@ public class AddRecipeActivity extends AppCompatActivity {
             e.printStackTrace();
             return;
         }
+
+        Log.d("AddRecipeActivity", "Session Token: " + sessionToken);  // Añadido: Log del token de sesión
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, requestBody, new Response.Listener<JSONObject>() {

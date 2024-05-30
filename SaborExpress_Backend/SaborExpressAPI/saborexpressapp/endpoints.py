@@ -119,3 +119,72 @@ def search_recipes(request):
         return JsonResponse({"error": "Invalid HTTP method"}, status=405)
 
 
+@csrf_exempt
+def user_recipes(request):
+    if request.method == 'GET':
+        try:
+            user_session = authenticate_user(request)
+            user = user_session.user
+            recipes = Recipe.objects.filter(author=user)
+            recipes_list = []
+            for recipe in recipes:
+                recipe_data = {
+                    "id": recipe.id,
+                    "recipe_name": recipe.recipe_name,
+                    "description": recipe.description,
+                    "food_type": recipe.food_type,
+                    "ingredients": recipe.ingredients,
+                    "steps": recipe.steps,
+                    "image_url": recipe.image_url,
+                    "author": recipe.author.username  # Solo el nombre del autor
+                }
+                recipes_list.append(recipe_data)
+            return JsonResponse(recipes_list, safe=False, status=200)
+        except PermissionDenied:
+            return JsonResponse({'error': 'Unauthorized'}, status=401)
+    else:
+        return JsonResponse({"error": "Invalid HTTP method"}, status=405)
+
+
+@csrf_exempt
+def add_recipe(request):
+    if request.method == 'POST':
+        print("Headers:", request.headers)  # Añadido: Log de los headers de la solicitud
+        try:
+            user_session = authenticate_user(request)
+            user = user_session.user
+        except PermissionDenied:
+            return JsonResponse({'error': 'Unauthorized'}, status=401)
+
+        try:
+            data = json.loads(request.body)
+            recipe_name = data['recipe_name']
+            description = data['description']
+            food_type = data['food_type']
+            ingredients = data['ingredients']
+            steps = data['steps']
+            image_url = data['image_url']
+
+            new_recipe = Recipe(
+                recipe_name=recipe_name,
+                description=description,
+                food_type=food_type,
+                ingredients=ingredients,
+                steps=steps,
+                image_url=image_url,
+                author=user
+            )
+            new_recipe.save()
+
+            print("Recipe added:", new_recipe)  # Añadido: Log de la receta añadida
+
+            return JsonResponse({"response": "Recipe added successfully"}, status=201)
+        except KeyError:
+            return JsonResponse({"response": "Invalid data"}, status=400)
+        except json.JSONDecodeError:
+            return JsonResponse({"response": "Invalid JSON"}, status=400)
+    else:
+        return JsonResponse({"response": "HTTP method unsupported"}, status=405)
+
+
+

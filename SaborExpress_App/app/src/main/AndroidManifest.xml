@@ -30,7 +30,7 @@
 
         <activity android:name=".MainActivity"/>
 
-        <activity android:name=".AddRecipeActivity" />
+        <activity android:name=".ui.profile.AddRecipeActivity"/>
 
     </application>
 
