@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
     private RecyclerAdapter adapter; // Adaptador para el RecyclerView
     private List<RecyclerItems> homeRecipesList; // Lista de elementos para el RecyclerView
     private Fragment fragment = this;
+    private RequestQueue requestQueue; // Cola de peticiones de Volley
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,22 +43,31 @@ public class HomeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view_item);
         // Inicializamos la lista de elementos.
         homeRecipesList = new ArrayList<>();
+        // Inicializamos la cola de peticiones de Volley.
+        requestQueue = Volley.newRequestQueue(getContext());
 
-        // Tras identificar el RecyclerView, pasamos a realizar la petición para obtener la info.
+        // Llamamos al método para buscar recetas aleatorias.
+        fetchRandomRecipes();
+
+        return view;
+    }
+
+    // Método para buscar recetas aleatorias
+    private void fetchRandomRecipes() {
+        String url = "http://10.0.2.2:8000/random_recipes?num_recipes=10"; // URL del endpoint para obtener recetas aleatorias
+
         JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
-                "https://raw.githubusercontent.com/Bl4nc018/SaborExpress/main/recipes.json",
+                url,
                 null,
                 new Response.Listener<JSONArray>() {
-                    // Si obtenemos respuesta, vamos leyendo todos los datos obtenidos de la url y
-                    // pasandolos de arrays a objetos concretos y añadiendolos individualmente a
-                    // una lista.
                     @Override
                     public void onResponse(JSONArray response) {
+                        homeRecipesList.clear(); // Limpiamos la lista actual para evitar duplicados
                         for (int i = 0; i < response.length(); i++) {
                             try {
-                                JSONObject game = response.getJSONObject(i);
-                                RecyclerItems data = new RecyclerItems(game);
+                                JSONObject recipe = response.getJSONObject(i);
+                                RecyclerItems data = new RecyclerItems(recipe);
                                 homeRecipesList.add(data);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -78,11 +88,7 @@ public class HomeFragment extends Fragment {
                 }
         );
 
-        // Finalizada la configuración según el tipo de respuesta obtenido,
-        // agregamos la solicitud a la cola de Volley para su procesamiento.
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(request);
-        return view;
+        // Agregamos la solicitud a la cola de Volley para su procesamiento.
+        requestQueue.add(request);
     }
-
 }

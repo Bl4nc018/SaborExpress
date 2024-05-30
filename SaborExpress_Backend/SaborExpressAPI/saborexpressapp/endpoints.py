@@ -1,5 +1,6 @@
 import json
 import bcrypt
+import random
 import secrets
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -187,4 +188,30 @@ def add_recipe(request):
         return JsonResponse({"response": "HTTP method unsupported"}, status=405)
 
 
-
+# Método para obtener un número especificado de recetas aleatorias
+@csrf_exempt
+def random_recipes(request):
+    if request.method == 'GET':
+        try:
+            # Número de recetas aleatorias a devolver
+            num_recipes = int(request.GET.get('num_recipes', 10))
+            all_recipes = list(Recipe.objects.all())
+            random_recipes = random.sample(all_recipes, min(len(all_recipes), num_recipes))
+            recipes_list = []
+            for recipe in random_recipes:
+                recipe_data = {
+                    "id": recipe.id,
+                    "recipe_name": recipe.recipe_name,
+                    "description": recipe.description,
+                    "food_type": recipe.food_type,
+                    "ingredients": recipe.ingredients,
+                    "steps": recipe.steps,
+                    "image_url": recipe.image_url,
+                    "author": recipe.author.username  # Solo el nombre del autor
+                }
+                recipes_list.append(recipe_data)
+            return JsonResponse(recipes_list, safe=False, status=200)
+        except ValueError:
+            return JsonResponse({"error": "Invalid number of recipes requested"}, status=400)
+    else:
+        return JsonResponse({"error": "Invalid HTTP method"}, status=405)
