@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="orange_200">#FFE0B2</color> <!-- Naranja claro -->
+    <color name="orange_300">#FFCC80</color>
     <color name="orange_500">#FF9800</color> <!-- Naranja principal -->
     <color name="orange_700">#EF6C00</color> <!-- Naranja oscuro -->
     <color name="gray_200">#BDBDBD</color>   <!-- Gris para contraste -->

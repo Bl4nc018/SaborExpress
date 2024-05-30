@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.saborexpress.R;
+import com.example.saborexpress.Server;
 import com.example.saborexpress.recycler.RecyclerAdapter;
 import com.example.saborexpress.recycler.RecyclerItems;
 
@@ -54,11 +55,9 @@ public class HomeFragment extends Fragment {
 
     // Método para buscar recetas aleatorias
     private void fetchRandomRecipes() {
-        String url = "http://10.0.2.2:8000/random_recipes?num_recipes=10"; // URL del endpoint para obtener recetas aleatorias
-
         JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
-                url,
+                Server.name + "/random_recipes?num_recipes=10",
                 null,
                 new Response.Listener<JSONArray>() {
                     @Override

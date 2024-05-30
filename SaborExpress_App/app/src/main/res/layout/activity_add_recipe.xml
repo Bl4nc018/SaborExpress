@@ -1,76 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
-    <EditText
-        android:id="@+id/recipeNameEditText"
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Recipe Name"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <EditText
-        android:id="@+id/descriptionEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipeNameEditText"
-        android:layout_marginTop="8dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <EditText
-        android:id="@+id/foodTypeEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Food Type"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descriptionEditText"
-        android:layout_marginTop="8dp"/>
+            <!-- Recipe Name EditText -->
+            <EditText
+                android:id="@+id/recipeNameEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Recipe Name"
+                android:padding="12dp"
+                android:backgroundTint="@color/orange_500"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/ingredientsEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Ingredients"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foodTypeEditText"
-        android:layout_marginTop="8dp"/>
+            <!-- Description EditText -->
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:padding="12dp"
+                android:backgroundTint="@color/orange_500"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recipeNameEditText" />
 
-    <EditText
-        android:id="@+id/stepsEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Steps"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ingredientsEditText"
-        android:layout_marginTop="8dp"/>
+            <!-- Food Type EditText -->
+            <EditText
+                android:id="@+id/foodTypeEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Food Type"
+                android:padding="12dp"
+                android:backgroundTint="@color/orange_500"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descriptionEditText" />
 
-    <EditText
-        android:id="@+id/imageUrlEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Image URL"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stepsEditText"
-        android:layout_marginTop="8dp"/>
+            <!-- Ingredients EditText -->
+            <EditText
+                android:id="@+id/ingredientsEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Ingredients"
+                android:padding="12dp"
+                android:backgroundTint="@color/orange_500"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/foodTypeEditText" />
 
-    <Button
-        android:id="@+id/addRecipeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Recipe"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageUrlEditText"
-        android:layout_marginTop="16dp"/>
+            <!-- Steps EditText -->
+            <EditText
+                android:id="@+id/stepsEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Steps"
+                android:padding="12dp"
+                android:backgroundTint="@color/orange_500"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ingredientsEditText" />
+
+            <!-- Image URL EditText -->
+            <EditText
+                android:id="@+id/imageUrlEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Image URL"
+                android:padding="12dp"
+                android:backgroundTint="@color/orange_500"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stepsEditText" />
+
+            <!-- Add Recipe Button -->
+            <Button
+                android:id="@+id/addRecipeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Recipe"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/orange_700"
+                android:padding="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageUrlEditText"
+                android:layout_marginTop="16dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.saborexpress.R;
+import com.example.saborexpress.Server;
 import com.example.saborexpress.recycler.RecyclerItems;
 
 import org.json.JSONArray;
@@ -33,7 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
-
     private RecyclerView recyclerView;
     private SearchAdapter adapter;
     private List<RecyclerItems> recipeList;
@@ -107,7 +107,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void fetchRecipes(String query, String foodType) {
-        String url = "http://10.0.2.2:8000/search_recipes?name=" + query;
+        String url = Server.name + "/search_recipes?name=" + query;
         if (!TextUtils.isEmpty(foodType) && !foodType.equals("Todos")) {
             url += "&food_type=" + foodType;
         }
