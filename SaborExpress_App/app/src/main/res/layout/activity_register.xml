@@ -1,42 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
-    <EditText
-        android:id="@+id/userName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de usuario"
-        android:inputType="text" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/userPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
+        <!-- Título del formulario de registro -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Usuario"
+            android:textSize="24sp"
+            android:textColor="@color/orange_700"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp" />
 
-    <EditText
-        android:id="@+id/userFoodType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tipo de comida favorita"
-        android:inputType="text" />
+        <!-- CardView para el nombre de usuario -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
 
-    <EditText
-        android:id="@+id/userImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="URL de la imagen de perfil"
-        android:inputType="textUri" />
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de usuario"
+                android:padding="16dp"
+                android:backgroundTint="@color/gray_200"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:inputType="text" />
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/registerB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar" />
+        <!-- CardView para la contraseña -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
 
-</LinearLayout>
+            <EditText
+                android:id="@+id/userPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:padding="16dp"
+                android:backgroundTint="@color/gray_200"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:inputType="textPassword" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView para el tipo de comida favorita -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <EditText
+                android:id="@+id/userFoodType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipo de comida favorita"
+                android:padding="16dp"
+                android:backgroundTint="@color/gray_200"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:inputType="text" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView para la URL de la imagen de perfil -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <EditText
+                android:id="@+id/userImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="URL de la imagen de perfil"
+                android:padding="16dp"
+                android:backgroundTint="@color/gray_200"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_700"
+                android:inputType="textUri" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón de registro -->
+        <Button
+            android:id="@+id/registerB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:backgroundTint="@color/orange_700"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"/>
+    </LinearLayout>
+</ScrollView>
