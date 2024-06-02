@@ -13,8 +13,8 @@
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Frontend**: Java
-- **Backend**: Python
+- **Frontend**: Java (Android Studio Developer)
+- **Backend**: Python (PyCharm)
 - **Base de Datos**: SQLite
 
 ## 🚀 Instalación
@@ -68,23 +68,5 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 Desarrollado por Bl4nc018 - [bl4nc018@example.com](mailto:bl4nc018@example.com)
 
-
-
-
-Quick start
-===========
-
-Please read our `Command Reference <https://example.com/docs/command-reference>`_ for a complete list.
-
-A common CLI workflow includes:
-
-| Task                              | Terminal                                                                                           |
-|-----------------------------------|----------------------------------------------------------------------------------------------------|
-| Track data                        | `$ git add train.py params.yaml` <br> `$ dvc add images/`                                          |
-| Connect code and data             | `$ dvc stage add -n featurize -d images/ -o features/ python featurize.py` <br> `$ dvc stage add -n train -d features/ -d train.py -o model.p -M metrics.json python train.py` |
-| Make changes and experiment       | `$ dvc exp run -n exp-baseline` <br> `$ vi train.py` <br> `$ dvc exp run -n exp-code-change`       |
-| Compare and select experiments    | `$ dvc exp show` <br> `$ dvc exp apply exp-baseline`                                               |
-| Share code                        | `$ git add .` <br> `$ git commit -m 'The baseline model'` <br> `$ git push`                        |
-| Share data and ML models          | `$ dvc remote add myremote -d s3://mybucket/image_cnn` <br> `$ dvc push`                           |
 
 
