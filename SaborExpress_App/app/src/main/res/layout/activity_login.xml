@@ -6,21 +6,23 @@
     android:padding="16dp"
     android:background="@color/white">
 
+    <!-- Texto de bienvenida -->
     <TextView
         android:id="@+id/lText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="¡Bienvenido de nuevo, chef!"
         android:textSize="32sp"
         android:textColor="@color/orange_700"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-light"
-        android:layout_marginTop="30dp"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- CardView para el nombre de usuario -->
     <androidx.cardview.widget.CardView
         android:id="@+id/userNameCard"
         android:layout_width="0dp"
@@ -31,6 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Campo de entrada para el nombre de usuario -->
         <EditText
             android:id="@+id/userName"
             android:layout_width="match_parent"
@@ -42,6 +45,7 @@
             android:textColorHint="@color/gray_200"/>
     </androidx.cardview.widget.CardView>
 
+    <!-- CardView para la contraseña -->
     <androidx.cardview.widget.CardView
         android:id="@+id/userPasswordCard"
         android:layout_width="0dp"
@@ -52,6 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Campo de entrada para la contraseña -->
         <EditText
             android:id="@+id/userPassword"
             android:layout_width="match_parent"
@@ -63,21 +68,23 @@
             android:textColorHint="@color/gray_200"/>
     </androidx.cardview.widget.CardView>
 
+    <!-- Botón de login -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Login"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/white"
         android:backgroundTint="@color/orange_700"
-        android:layout_marginTop="30dp"
         android:padding="13dp"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/userPasswordCard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Texto para registrar un nuevo usuario -->
     <TextView
         android:id="@+id/registerText"
         android:layout_width="wrap_content"
@@ -86,11 +93,10 @@
         android:text="¿Eres un nuevo chef? Regístrate aquí"
         android:textColor="@color/orange_500"
         android:textStyle="bold"
-        android:textSize="16sp"
+        android:textSize="17sp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/loginButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"/>
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
     android:padding="16dp"
     android:background="@color/white">
 
+    <!-- Contenedor principal de los elementos, dispuesto verticalmente -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,11 +17,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Registro de Usuario"
             android:textSize="24sp"
             android:textColor="@color/orange_700"
             android:textStyle="bold"
-            android:layout_gravity="center"
             android:paddingBottom="16dp" />
 
         <!-- CardView para el nombre de usuario -->
@@ -31,6 +32,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp">
 
+            <!-- Campo de texto para el nombre de usuario -->
             <EditText
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
@@ -51,6 +53,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp">
 
+            <!-- Campo de texto para la contraseña -->
             <EditText
                 android:id="@+id/userPassword"
                 android:layout_width="match_parent"
@@ -71,6 +74,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp">
 
+            <!-- Campo de texto para el tipo de comida favorita -->
             <EditText
                 android:id="@+id/userFoodType"
                 android:layout_width="match_parent"
@@ -91,6 +95,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp">
 
+            <!-- Campo de texto para la URL de la imagen de perfil -->
             <EditText
                 android:id="@+id/userImage"
                 android:layout_width="match_parent"

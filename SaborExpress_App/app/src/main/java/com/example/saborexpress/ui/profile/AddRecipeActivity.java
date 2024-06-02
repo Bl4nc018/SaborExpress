@@ -24,6 +24,7 @@ import org.json.JSONObject;
 
 public class AddRecipeActivity extends AppCompatActivity {
 
+    // Declaramos variables para los elementos de la interfaz de usuario
     private EditText recipeNameEditText;
     private EditText descriptionEditText;
     private EditText foodTypeEditText;
@@ -33,13 +34,16 @@ public class AddRecipeActivity extends AppCompatActivity {
     private Button addRecipeButton;
     private String sessionToken;
 
+    // Declaramos la cola de solicitudes de Volley
     private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Establecemos el layout para la actividad
         setContentView(R.layout.activity_add_recipe);
 
+        // Inicializamos los elementos de la interfaz de usuario
         recipeNameEditText = findViewById(R.id.recipeNameEditText);
         descriptionEditText = findViewById(R.id.descriptionEditText);
         foodTypeEditText = findViewById(R.id.foodTypeEditText);
@@ -48,22 +52,30 @@ public class AddRecipeActivity extends AppCompatActivity {
         imageUrlEditText = findViewById(R.id.imageUrlEditText);
         addRecipeButton = findViewById(R.id.addRecipeButton);
 
+        // Inicializamos la cola de solicitudes de Volley
         requestQueue = Volley.newRequestQueue(this);
+        // Obtenemos el token de sesión de los extras del intent
         sessionToken = getIntent().getStringExtra("VALID_TOKEN");
 
+        // Configuramos el listener para el botón "addRecipeButton"
         addRecipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Llamamos al método para agregar la receta cuando se haga clic en el botón
                 addRecipe();
             }
         });
     }
 
+    // Este es el método para agregar una receta
     private void addRecipe() {
-        String url = Server.name + "/add_recipe";  // Cambiado a /add_recipe
+        // Definimos la URL del endpoint para agregar recetas
+        String url = Server.name + "/add_recipe";
 
+        // Creamos un objeto JSON para el cuerpo de la solicitud
         JSONObject requestBody = new JSONObject();
         try {
+            // Ponemos los valores de los EditText en el objeto JSON
             requestBody.put("recipe_name", recipeNameEditText.getText().toString());
             requestBody.put("description", descriptionEditText.getText().toString());
             requestBody.put("food_type", foodTypeEditText.getText().toString());
@@ -71,36 +83,46 @@ public class AddRecipeActivity extends AppCompatActivity {
             requestBody.put("steps", stepsEditText.getText().toString());
             requestBody.put("image_url", imageUrlEditText.getText().toString());
         } catch (JSONException e) {
+            // Manejamos excepción de JSON
             e.printStackTrace();
             return;
         }
 
-        Log.d("AddRecipeActivity", "Session Token: " + sessionToken);  // Añadido: Log del token de sesión
+        // Registramos el token de sesión en el log para depuración
+        Log.d("AddRecipeActivity", "Session Token: " + sessionToken);
 
+        // Creamos una solicitud JSON utilizando Volley
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, requestBody, new Response.Listener<JSONObject>() {
 
+                    // En la siguiente parte definiremos el método que se llama cuando se recibe una respuesta exitosa
                     @Override
                     public void onResponse(JSONObject response) {
+                        // Mostramos un mensaje de éxito y finalizar la actividad
                         Toast.makeText(AddRecipeActivity.this, "Recipe added successfully", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }, new Response.ErrorListener() {
 
+                    // Aquí definiremos el método al que se llama cuando ocurre un error en la solicitud
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        // Manejar el error y mostrar un mensaje de error
                         error.printStackTrace();
                         Toast.makeText(AddRecipeActivity.this, "Error adding recipe", Toast.LENGTH_SHORT).show();
                     }
                 }) {
+            // Este método agrega encabezados a la solicitud
             @Override
             public java.util.Map<String, String> getHeaders() {
+                // Creamos un mapa de encabezados y agregar el token de sesión
                 java.util.Map<String, String> headers = new java.util.HashMap<>();
                 headers.put("SessionToken", sessionToken);
                 return headers;
             }
         };
 
+        // Agregamos la solicitud a la cola de solicitudes de Volley
         requestQueue.add(jsonObjectRequest);
     }
 }

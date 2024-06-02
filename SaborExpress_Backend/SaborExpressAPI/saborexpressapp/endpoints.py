@@ -8,6 +8,7 @@ from django.core.exceptions import PermissionDenied
 from .models import User, UserSession, Recipe
 
 
+# Función para autenticar al usuario basado en el token de sesión
 def authenticate_user(request):
     session_token = request.headers.get('SessionToken', None)
     if session_token is None:
@@ -19,9 +20,11 @@ def authenticate_user(request):
     return user_session
 
 
+# Endpoint para manejar las solicitudes relacionadas con el usuario
 @csrf_exempt
 def user(request):
     if request.method == 'GET':
+        # Maneja la solicitud GET para obtener detalles del usuario autenticado
         try:
             user_session = authenticate_user(request)
             user_id = user_session.user.id
@@ -32,6 +35,7 @@ def user(request):
             return JsonResponse({'error': 'Unauthorized'}, status=401)
 
     elif request.method == 'POST':
+        # Maneja la solicitud POST para registrar un nuevo usuario
         try:
             data = json.loads(request.body)
             username = data['username']
@@ -39,11 +43,14 @@ def user(request):
             foodtype = data['foodtype']
             image = data.get('image', '')  # Manejar si la imagen no está presente
 
+            # Verifica si el nombre de usuario ya existe
             if User.objects.filter(username=username).exists():
                 return JsonResponse({"response": "User already exists"}, status=400)
 
+            # Cifra la contraseña
             hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
+            # Crea y guarda el nuevo usuario
             new_user = User(username=username, password=hashed_password.decode('utf-8'), foodtype=foodtype, image=image)
             new_user.save()
 
@@ -56,9 +63,11 @@ def user(request):
         return JsonResponse({"response": "HTTP method unsupported"}, status=405)
 
 
+# Endpoint para manejar las solicitudes relacionadas con las sesiones de usuario
 @csrf_exempt
 def sessions(request):
     if request.method == 'POST':
+        # Maneja la solicitud POST para crear una nueva sesión de usuario
         try:
             client_json = json.loads(request.body)
             json_username = client_json['username']
@@ -69,6 +78,7 @@ def sessions(request):
             db_user = User.objects.get(username=json_username)
         except User.DoesNotExist:
             return JsonResponse({"response": "User not in database"}, status=404)
+        # Verifica la contraseña
         if bcrypt.checkpw(json_password.encode('utf8'), db_user.password.encode('utf8')):
             random_token = secrets.token_hex(10)
             session = UserSession(user=db_user, token=random_token)
@@ -77,6 +87,7 @@ def sessions(request):
         else:
             return JsonResponse({"response": "Unauthorized"}, status=401)
     elif request.method == 'DELETE':
+        # Maneja la solicitud DELETE para cerrar la sesión del usuario autenticado
         try:
             user_session = authenticate_user(request)
         except PermissionDenied:
@@ -87,6 +98,7 @@ def sessions(request):
         return JsonResponse({"response": "HTTP method unsupported"}, status=405)
 
 
+# Endpoint para buscar recetas basadas en nombre y tipo de comida
 @csrf_exempt
 def search_recipes(request):
     if request.method == 'GET':
@@ -96,8 +108,10 @@ def search_recipes(request):
         if not recipe_name:
             return JsonResponse({"error": "No recipe name provided"}, status=400)
 
+        # Filtra las recetas basadas en el nombre de la receta
         recipes = Recipe.objects.filter(recipe_name__icontains=recipe_name)
 
+        # Filtra las recetas basadas en el tipo de comida si está presente
         if food_type and food_type != "Todos":
             recipes = recipes.filter(food_type__icontains=food_type)
 
@@ -120,6 +134,7 @@ def search_recipes(request):
         return JsonResponse({"error": "Invalid HTTP method"}, status=405)
 
 
+# Endpoint para obtener las recetas de un usuario específico
 @csrf_exempt
 def user_recipes(request):
     if request.method == 'GET':
@@ -147,6 +162,7 @@ def user_recipes(request):
         return JsonResponse({"error": "Invalid HTTP method"}, status=405)
 
 
+# Endpoint para agregar una nueva receta
 @csrf_exempt
 def add_recipe(request):
     if request.method == 'POST':
@@ -166,6 +182,7 @@ def add_recipe(request):
             steps = data['steps']
             image_url = data['image_url']
 
+            # Crea y guarda la nueva receta
             new_recipe = Recipe(
                 recipe_name=recipe_name,
                 description=description,
@@ -188,7 +205,7 @@ def add_recipe(request):
         return JsonResponse({"response": "HTTP method unsupported"}, status=405)
 
 
-# Método para obtener un número especificado de recetas aleatorias
+# Endpoint para obtener un número especificado de recetas aleatorias
 @csrf_exempt
 def random_recipes(request):
     if request.method == 'GET':

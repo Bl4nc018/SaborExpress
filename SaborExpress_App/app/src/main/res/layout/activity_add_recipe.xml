@@ -7,6 +7,7 @@
     android:padding="16dp"
     android:background="@color/white">
 
+    <!-- CardView que contiene todos los campos de entrada y el botón -->
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,112 +20,114 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <!-- ConstraintLayout dentro del CardView para organizar los campos de entrada -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Recipe Name EditText -->
+            <!-- Campo de entrada para el nombre de la receta -->
             <EditText
                 android:id="@+id/recipeNameEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:hint="Recipe Name"
                 android:padding="12dp"
                 android:backgroundTint="@color/orange_500"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_700"
                 android:textSize="16sp"
-                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Description EditText -->
+            <!-- Campo de entrada para la descripción -->
             <EditText
                 android:id="@+id/descriptionEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:hint="Description"
                 android:padding="12dp"
                 android:backgroundTint="@color/orange_500"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_700"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recipeNameEditText" />
 
-            <!-- Food Type EditText -->
+            <!-- Campo de entrada para el tipo de comida -->
             <EditText
                 android:id="@+id/foodTypeEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:hint="Food Type"
                 android:padding="12dp"
                 android:backgroundTint="@color/orange_500"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_700"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/descriptionEditText" />
 
-            <!-- Ingredients EditText -->
+            <!-- Campo de entrada para los ingredientes -->
             <EditText
                 android:id="@+id/ingredientsEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:hint="Ingredients"
                 android:padding="12dp"
                 android:backgroundTint="@color/orange_500"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_700"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/foodTypeEditText" />
 
-            <!-- Steps EditText -->
+            <!-- Campo de entrada para los pasos -->
             <EditText
                 android:id="@+id/stepsEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:hint="Steps"
                 android:padding="12dp"
                 android:backgroundTint="@color/orange_500"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_700"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ingredientsEditText" />
 
-            <!-- Image URL EditText -->
+            <!-- Campo de entrada para la URL de la imagen -->
             <EditText
                 android:id="@+id/imageUrlEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:hint="Image URL"
                 android:padding="12dp"
                 android:backgroundTint="@color/orange_500"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray_700"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/stepsEditText" />
 
-            <!-- Add Recipe Button -->
+            <!-- Botón para agregar la receta -->
             <Button
                 android:id="@+id/addRecipeButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Add Recipe"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
@@ -132,8 +135,9 @@
                 android:padding="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageUrlEditText"
-                android:layout_marginTop="16dp"/>
+                app:layout_constraintTop_toBottomOf="@id/imageUrlEditText" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

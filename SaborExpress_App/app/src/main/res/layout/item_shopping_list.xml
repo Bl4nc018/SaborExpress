@@ -8,11 +8,13 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
+    <!-- ConstraintLayout interno para organizar el contenido del CardView -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
+        <!-- CheckBox para marcar los elementos de la lista -->
         <CheckBox
             android:id="@+id/checkBoxItem"
             android:textColor="@android:color/white"
@@ -23,11 +25,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- TextView para mostrar el nombre del ítem -->
         <TextView
             android:id="@+id/textViewItemName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

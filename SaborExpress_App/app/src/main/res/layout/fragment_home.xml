@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <!-- RecyclerView para mostrar una lista de elementos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_item"
         android:layout_width="match_parent"

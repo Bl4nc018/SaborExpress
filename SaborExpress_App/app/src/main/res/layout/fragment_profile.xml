@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- ImageView para mostrar la imagen de perfil del usuario -->
     <ImageView
         android:id="@+id/profileImageView"
         android:layout_width="100dp"
@@ -13,6 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- TextView para mostrar el nombre de usuario -->
     <TextView
         android:id="@+id/usernameTextView"
         android:layout_width="wrap_content"
@@ -25,6 +27,7 @@
         app:layout_constraintStart_toEndOf="@id/profileImageView"
         app:layout_constraintTop_toTopOf="@id/profileImageView" />
 
+    <!-- TextView para mostrar el tipo de comida favorita del usuario -->
     <TextView
         android:id="@+id/favoriteFoodTypeTextView"
         android:layout_width="wrap_content"
@@ -35,10 +38,12 @@
         app:layout_constraintStart_toStartOf="@id/usernameTextView"
         app:layout_constraintTop_toBottomOf="@id/usernameTextView" />
 
+    <!-- Botón para cerrar sesión -->
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="Cerrar sesión"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -46,42 +51,46 @@
         android:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintTop_toBottomOf="@id/profileImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Divider para separar el contenido -->
     <View
         android:layout_width="0dp"
         android:layout_height="3dp"
+        android:layout_marginTop="20dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@id/logoutButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- TextView para el título de la sección "Mis Recetas" -->
     <TextView
         android:id="@+id/titleMyRecipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:text="Mis Recetas"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/logoutButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="35dp" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- RecyclerView para mostrar la lista de recetas del usuario -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recipesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="325dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintTop_toBottomOf="@id/titleMyRecipes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Botón para añadir una nueva receta -->
     <Button
         android:id="@+id/addRecipeButton"
+        android:background="@drawable/circle_button"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="10dp"
@@ -92,7 +101,6 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipesRecyclerView"
-        android:background="@drawable/circle_button" />
+        app:layout_constraintTop_toBottomOf="@id/recipesRecyclerView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

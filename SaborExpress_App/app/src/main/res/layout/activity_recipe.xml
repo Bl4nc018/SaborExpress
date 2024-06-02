@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- CardView que contiene el contenido de la receta -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,11 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Layout interno del CardView que organiza los elementos de la receta -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
 
+            <!-- Imagen de la receta -->
             <ImageView
                 android:id="@+id/image_url"
                 android:layout_width="150dp"
@@ -31,113 +34,118 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
+            <!-- Nombre de la receta -->
             <TextView
                 android:id="@+id/recipe_name"
                 android:text="Recipe"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/image_url"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Añadido: TextView para el nombre del autor -->
+            <!-- Nombre del autor -->
             <TextView
                 android:id="@+id/author"
                 android:text="Autor"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@color/white"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/recipe_name"
                 app:layout_constraintStart_toEndOf="@id/image_url"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Encabezado para tipo de comida -->
+            <!-- Encabezado para el tipo de comida -->
             <TextView
                 android:id="@+id/food_type_header"
                 android:text="Tipo de comida:"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toBottomOf="@id/author"
                 app:layout_constraintStart_toEndOf="@id/image_url"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <!-- Tipo de comida -->
             <TextView
                 android:id="@+id/food_type"
                 android:text="Food type"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/white"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/food_type_header"
                 app:layout_constraintStart_toEndOf="@id/image_url"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Encabezado para ingredientes -->
+            <!-- Encabezado para los ingredientes -->
             <TextView
                 android:id="@+id/ingredients_header"
                 android:text="Ingredientes:"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_marginTop="20dp"
                 app:layout_constraintTop_toBottomOf="@id/image_url"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+            <!-- Ingredientes de la receta -->
             <TextView
                 android:id="@+id/ingredients"
                 android:text="Ingredients"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:layout_marginTop="4dp"
                 app:layout_constraintTop_toBottomOf="@id/ingredients_header"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <!-- Encabezado para pasos -->
+            <!-- Encabezado para los pasos -->
             <TextView
                 android:id="@+id/steps_header"
                 android:text="Pasos:"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_marginTop="20dp"
                 app:layout_constraintTop_toBottomOf="@id/ingredients"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <!-- Pasos para la receta -->
             <TextView
                 android:id="@+id/steps"
                 android:text="Steps"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:layout_marginTop="4dp"
                 app:layout_constraintTop_toBottomOf="@id/steps_header"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
