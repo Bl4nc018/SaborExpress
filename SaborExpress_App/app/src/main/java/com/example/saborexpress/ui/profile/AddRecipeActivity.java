@@ -61,10 +61,25 @@ public class AddRecipeActivity extends AppCompatActivity {
         addRecipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Llamamos al método para agregar la receta cuando se haga clic en el botón
-                addRecipe();
+                // Validamos si los campos requeridos están completos
+                if (validateFields()) {
+                    // Llamamos al método para agregar la receta cuando se haga clic en el botón
+                    addRecipe();
+                } else {
+                    // Mostramos un mensaje si los campos requeridos no están completos
+                    Toast.makeText(AddRecipeActivity.this, "Por favor, rellena todos los campos obligatorios.", Toast.LENGTH_LONG).show();
+                }
             }
         });
+    }
+
+    // Método para validar que todos los campos requeridos están completos
+    private boolean validateFields() {
+        return !recipeNameEditText.getText().toString().trim().isEmpty()
+                && !descriptionEditText.getText().toString().trim().isEmpty()
+                && !foodTypeEditText.getText().toString().trim().isEmpty()
+                && !ingredientsEditText.getText().toString().trim().isEmpty()
+                && !stepsEditText.getText().toString().trim().isEmpty();
     }
 
     // Este es el método para agregar una receta
@@ -99,7 +114,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         // Mostramos un mensaje de éxito y finalizar la actividad
-                        Toast.makeText(AddRecipeActivity.this, "Recipe added successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddRecipeActivity.this, "Receta agregada exitosamente", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }, new Response.ErrorListener() {
@@ -109,7 +124,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // Manejar el error y mostrar un mensaje de error
                         error.printStackTrace();
-                        Toast.makeText(AddRecipeActivity.this, "Error adding recipe", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddRecipeActivity.this, "Error al agregar la receta", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             // Este método agrega encabezados a la solicitud

@@ -49,12 +49,18 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Obtenemos los valores de los campos de entrada
-                String user = userName.getText().toString();
-                String password = userPassword.getText().toString();
-                String foodType = userFoodType.getText().toString();
-                String image = userImage.getText().toString();
-                // Llamamos al método para registrar el usuario
-                registerUser(user, password, foodType, image);
+                String user = userName.getText().toString().trim();
+                String password = userPassword.getText().toString().trim();
+                String foodType = userFoodType.getText().toString().trim();
+                String image = userImage.getText().toString().trim();
+
+                // Validamos si los campos requeridos están completos
+                if (user.isEmpty() || password.isEmpty() || foodType.isEmpty()) {
+                    Toast.makeText(context, "Por favor, rellena todos los campos obligatorios.", Toast.LENGTH_LONG).show();
+                } else {
+                    // Llamamos al método para registrar el usuario
+                    registerUser(user, password, foodType, image);
+                }
             }
         });
     }
