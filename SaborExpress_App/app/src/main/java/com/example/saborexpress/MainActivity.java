@@ -9,7 +9,6 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.saborexpress.databinding.ActivityMainBinding;
 
-
 // El binding es una técnica que permite una forma más segura y eficiente de interactuar con las vistas en tu aplicación.
 // En lugar de usar findViewById para cada vista, el binding genera automáticamente una clase de binding que contiene referencias
 // directas a todas las vistas en un layout. Esto mejora la seguridad del tipo y evita errores de tiempo de ejecución

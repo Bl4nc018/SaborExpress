@@ -99,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Mostramos un mensaje de error en caso de fallo en el registro
-                        Toast.makeText(context, "Error en el registro: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Error al realizar el registro. ", Toast.LENGTH_SHORT).show();
                     }
                 }
         );

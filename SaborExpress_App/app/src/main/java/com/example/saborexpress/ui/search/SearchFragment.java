@@ -146,7 +146,7 @@ public class SearchFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Mostramos un mensaje de error si la solicitud falla
-                        Toast.makeText(getContext(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Error en la solicitud. ", Toast.LENGTH_SHORT).show();
                     }
                 }
         );

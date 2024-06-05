@@ -92,7 +92,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Manejamos la lógica de cerrar sesión aquí
-                Toast.makeText(getActivity(), "Logged out", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Sesión cerrada", Toast.LENGTH_SHORT).show();
                 // Redirigimos la pantalla a la de inicio de sesión
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
@@ -143,11 +143,7 @@ public class ProfileFragment extends Fragment {
                             // Cargamos la imagen usando la clase Util
                             Util.downloadBitmapToImageView(imageUrl, profileImageView);
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            // Mostramos un mensaje de error si ocurre una excepción
-                            Toast.makeText(getActivity(), "Error parsing user data", Toast.LENGTH_SHORT).show();
-                        }
+                        } catch (JSONException e) { e.printStackTrace(); }
                     }
                 }, new Response.ErrorListener() {
 
@@ -155,7 +151,7 @@ public class ProfileFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
                         // Mostramos un mensaje de error si la solicitud falla
-                        Toast.makeText(getActivity(), "Error fetching user data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Error al recabar información del usuario.", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -196,12 +192,11 @@ public class ProfileFragment extends Fragment {
                         recyclerAdapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
-
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
                         // Mostramos un mensaje de error si la solicitud falla
-                        Toast.makeText(getActivity(), "Error fetching recipes", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Error al recargar las recetas.", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override

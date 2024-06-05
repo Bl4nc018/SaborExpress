@@ -89,7 +89,6 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             // Obtenemos el token de sesión de la respuesta
                             String receivedToken = response.getString("SessionToken");
-                            Toast.makeText(context, "Token: " + receivedToken, Toast.LENGTH_SHORT).show();
                             // Iniciamos la actividad principal y pasar el usuario y el token
                             Intent intent = new Intent(context, MainActivity.class);
                             intent.putExtra("VALID_USER", userName);
@@ -107,10 +106,10 @@ public class LoginActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // Manejamos errores en la respuesta de la solicitud
                         if (error.networkResponse == null) {
-                            Toast.makeText(context, "No connection established", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "No se ha podido establecer conexión con el servidor.", Toast.LENGTH_LONG).show();
                         } else {
                             int serverCode = error.networkResponse.statusCode;
-                            Toast.makeText(context, "Response status " + serverCode, Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Error con la conexión." + serverCode, Toast.LENGTH_LONG).show();
                         }
                         error.printStackTrace();
                     }

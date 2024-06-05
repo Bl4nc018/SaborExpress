@@ -114,7 +114,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         // Mostramos un mensaje de éxito y finalizar la actividad
-                        Toast.makeText(AddRecipeActivity.this, "Receta agregada exitosamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddRecipeActivity.this, "Receta añadida exitosamente", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }, new Response.ErrorListener() {
@@ -124,7 +124,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // Manejar el error y mostrar un mensaje de error
                         error.printStackTrace();
-                        Toast.makeText(AddRecipeActivity.this, "Error al agregar la receta", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddRecipeActivity.this, "Error al añadir la receta", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             // Este método agrega encabezados a la solicitud
