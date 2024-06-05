@@ -71,6 +71,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         private TextView description;
         private ImageView image_url;
         private Button cookButton;
+        private TextView author;  // Añadido: TextView para el nombre del autor
 
         // Constructor del ViewHolder
         public SearchViewHolder(@NonNull View itemView) {
@@ -80,6 +81,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             description = itemView.findViewById(R.id.description);
             image_url = itemView.findViewById(R.id.image_url);
             cookButton = itemView.findViewById(R.id.cookButton);
+            author = itemView.findViewById(R.id.author);  // Añadido: Encontrar el TextView del autor
+
         }
 
         // Este método sirve para mostrar los datos en los elementos de la vista
@@ -88,6 +91,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             recipe_name.setText(items.getRecipe_Name());
             description.setText(items.getDescription());
             Util.downloadBitmapToImageView(items.getImage_url(), this.image_url);
+            author.setText(items.getAuthor());  // Añadido: Establecer el nombre del autor
+
 
             // Configuramos el listener para el botón "Cocinar"
             cookButton.setOnClickListener(v -> {

@@ -37,7 +37,7 @@
             <!-- Nombre de la receta -->
             <TextView
                 android:id="@+id/recipe_name"
-                android:text="Recipe"
+                android:text="Receta"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -81,7 +81,7 @@
             <!-- Tipo de comida -->
             <TextView
                 android:id="@+id/food_type"
-                android:text="Food type"
+                android:text="Tipo de comida"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -109,7 +109,7 @@
             <!-- Ingredientes de la receta -->
             <TextView
                 android:id="@+id/ingredients"
-                android:text="Ingredients"
+                android:text="Ingredientes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -136,7 +136,7 @@
             <!-- Pasos para la receta -->
             <TextView
                 android:id="@+id/steps"
-                android:text="Steps"
+                android:text="Pasos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

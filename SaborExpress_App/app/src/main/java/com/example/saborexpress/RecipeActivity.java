@@ -16,6 +16,7 @@ public class RecipeActivity extends AppCompatActivity {
     private TextView ingredients;
     private TextView steps;
     private ImageView image_url;
+    private TextView author;  // Añadir esta línea para el autor
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class RecipeActivity extends AppCompatActivity {
         ingredients = findViewById(R.id.ingredients);
         steps = findViewById(R.id.steps);
         image_url = findViewById(R.id.image_url);
+        author = findViewById(R.id.author);  // Añadir esta línea para el autor
 
         // Obtenemos el objeto RecipeItems pasado desde la actividad anterior
         RecyclerItems recipe = (RecyclerItems) getIntent().getSerializableExtra("recipe");
@@ -39,6 +41,7 @@ public class RecipeActivity extends AppCompatActivity {
             food_type.setText(recipe.getFood_type());
             ingredients.setText(recipe.getIngredients());
             steps.setText(recipe.getSteps());
+            author.setText(recipe.getAuthor());  // Añadir esta línea para establecer el autor
             // Descargamos y establecemos la imagen utilizando una utilidad
             Util.downloadBitmapToImageView(recipe.getImage_url(), this.image_url);
         }
