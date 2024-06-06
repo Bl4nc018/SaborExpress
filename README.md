@@ -57,19 +57,28 @@
 2. **Configurar el backend**:
     - Navegar al directorio del backend:
       ```sh
-      cd SaborExpress/SaborExpress_Backend
+      cd SaborExpress
       ```
-    - Crear y activar un entorno virtual:
+    - Crear y activar un entorno virtual (Solo si no tienes las dependencias ya instaladas):
       ```sh
       python -m venv venv
-      source venv/bin/activate  # En Windows usar `venv\Scripts\activate`
       ```
+        (Procura no tener restringido el uso de scripts en tu sistema)
+      - Si estás empleando Windows:
+         ```sh
+         .venv\Scripts\activate
+         ```
+      - Si estás empleando Linux:
+         ```sh
+         source venv/bin/activate
+         ```
     - Instalar las dependencias necesarias:
       ```sh
       pip install -r requirements.txt
       ```
     - Realizar las migraciones de la base de datos:
       ```sh
+      cd SaborExpress_Backend\SaborExpressAPI
       python manage.py migrate
       ```
     - Iniciar el servidor de desarrollo:
@@ -77,7 +86,25 @@
       python manage.py runserver
       ```
 
-3. **Configurar el frontend**:
+   ## Eliminar el entorno virtual
+   
+   Si deseas eliminar el entorno virtual, sigue estos pasos:
+   
+   1. **Desactiva el entorno virtual (si está activo):**
+       ```powershell
+       deactivate
+       ```
+   
+   2. **Elimina el directorio del entorno virtual:**
+       ```powershell
+       Remove-Item -Recurse -Force .\venv
+       ```
+       
+   Procura asegurarte de que estás en el mismo lugar donde existe la carpeta venv.
+   Este comando eliminará el entorno virtual y liberará el espacio en disco utilizado por el mismo.
+      
+
+4. **Configurar el frontend**:
     - Abrir Android Studio.
     - Importar el proyecto ubicado en `SaborExpress/SaborExpress_App`.
     - Configurar un emulador o conectar un dispositivo físico:
@@ -85,7 +112,7 @@
       - Si estás usando un dispositivo físico, habilita el modo de desarrollador y la depuración USB o inalámbrica, según lo que prefieras.
     - Ejecutar la aplicación:
       - Haz clic en el botón "Run" en Android Studio para compilar y ejecutar la aplicación en el emulador o dispositivo conectado.
-
+     
 <br/>
 
 <h2 align="left">📚 Uso</h2>
