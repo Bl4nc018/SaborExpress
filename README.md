@@ -1,8 +1,24 @@
+
+![Logo](https://github.com/Bl4nc018/SaborExpress/blob/main/Logo.png)
+
+
 # 🍽️ SaborExpress
 
 **SaborExpress** es una aplicación móvil desarrollada como proyecto de TFG de un grado superior en DAM. Con una interfaz intuitiva, serás capaz de descubrir, guardar y compartir sencillas recetas culinarias. ¡Descubre el placer de cocinar con SaborExpress!
 
-|[Docs](https://example.com/docs)|
+<p align="left">
+   <img src="https://img.shields.io/badge/Build-Passing-brightgreen">
+   <img src="https://img.shields.io/badge/Java-11-orange">
+   <img src="https://img.shields.io/badge/Python-3.8-blue">
+   <img src="https://img.shields.io/badge/Security-bcrypt-green">
+   <img src="https://img.shields.io/badge/Platform-Android-green">
+   <img src="https://img.shields.io/badge/Database-SQLite-blue">
+   <img src="https://img.shields.io/badge/Backend-Django-yellowgreen">
+   <img src="https://img.shields.io/badge/Frontend-Android%20Studio-red">
+   <img src="https://img.shields.io/badge/Maintained-yes-brightgreen">
+   <img src="https://img.shields.io/badge/Version-1.0-blue">
+</p>
+
 
 ## 🌟 Características
 
@@ -33,7 +49,10 @@
     ```
 2. Configurar el backend:
     ```sh
-    cd SaborExpress_Backend
+    cd SaborExpress/SaborExpress_Backend
+    python -m venv venv
+    source venv/bin/activate  # En Windows usar `venv\Scripts\activate`
+    pip install -r requirements.txt
     python manage.py migrate
     python manage.py runserver
     ```
@@ -64,9 +83,9 @@ Para actualizar a una nueva versión, puedes seguir estos pasos:
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-## 📧 Contacto
+## :hammer: Desarrolladora
 
-Desarrollado por Bl4nc018 - [bl4nc018@example.com](mailto:bl4nc018@example.com)
+[<img src="https://avatars.githubusercontent.com/u/92156488?s=400&u=1302f75511bad4df69803bf7b66443a1a8364b60&v=4" width=115><br><sub>Ania Blanco</sub>](https://github.com/Bl4nc018)
 
 
 
